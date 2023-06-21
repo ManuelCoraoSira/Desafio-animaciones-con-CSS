@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'saira condensed';
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "aside"
+    "main"
+    "footer";
+    grid-template-rows: auto auto 10fr auto;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(36, 34, 34);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo { 
+    display: flex;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.icon {
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+
+aside {
+    padding: 5px;
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.lista {
+    position: relative;
+    display: block;
+}
+
+.lista-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+}
+
+.lista-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.lista-content a:hover {
+    background-color: greenyellow;
+}
+
+
+.lista:hover .lista-content {
+    display: flex;
+    flex-direction:column;
+}
+
+.lista:hover .anuncio {
+    background-color: greenyellow;
+}
+
+.anuncio {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 18rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'saira condensed';
+    font-weight: 700;
+    border: 1px rgb(36, 34, 34) solid;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.productos {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 10px;
+    grid-template-columns: auto;
+    overflow-y: auto;
+}
+
+.card {
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    width: 15rem;
+    height: 21rem;
+}
+
+.card img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 10px;
+    text-align: center;
+}
+
+.button-card {
+    background-color: greenyellow;
+    border: none;
+    padding: 5px 15px 5px 15px;
+    width: 8rem;
+    border-radius: 10px;
+    font-family: 'saira condensed';
+    font-weight: 700;
+}
+
+.paginador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginador nav {
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    gap: 50px;
+}
+
+.paginador a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    font-weight: 700;
+    background-color: greenyellow;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.menu {
+    display: none;
+}
+
+@media (min-width:576px) {
+    .grid-container {
+        grid-template-areas: 
+        "header aside"
+        "header main"
+        "footer main";
+        grid-template-rows: auto 3fr auto;
+        grid-template-columns: auto auto;
+        width: 100vw;
+        height: 100vh;
+        overflow-y:hidden;
+    }
+    .productos {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 15px;
+       
+    }
+    .header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .anuncio {
+        width: 30rem;
+    }
+    main {
+        height: 80vh;
+    }
+    .logo img {
+        width: 10rem;
+    }
+    .icon {
+        display: none;
+    }
+    .menu {
+        display:grid;
+    }
+}
