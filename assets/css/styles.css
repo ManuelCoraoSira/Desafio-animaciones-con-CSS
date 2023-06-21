@@ -32,6 +32,20 @@ nav {
 
 .logo { 
     display: flex;
+    animation: logo 4s ease-in;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logo{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    20%,60%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .menu ul {
@@ -69,6 +83,7 @@ aside {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 100%;
+    z-index: 1;
 }
 
 .lista-content a {
@@ -128,6 +143,12 @@ main {
     border: 1px solid gainsboro;
     width: 15rem;
     height: 21rem;
+    filter: grayscale(100%);
+    transition: all 1s;
+}
+
+.card:hover {
+    filter: saturate(100%);
 }
 
 .card img {
@@ -224,10 +245,11 @@ footer a {
         width: 30rem;
     }
     main {
-        height: 80vh;
+        height: 82vh;
     }
     .logo img {
-        width: 10rem;
+        width: 12rem;
+        height: 5rem;
     }
     .icon {
         display: none;
